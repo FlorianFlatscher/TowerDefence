@@ -12,19 +12,24 @@ public class World {
     private int width, height;
 
     public World(int width, int height, int widthCell, int heightCell) {
+
         generatePath(width / widthCell, height / heightCell, widthCell, heightCell);
         this.width = width;
         this.height = height;
     }
 
     private void generatePath(int width, int height, int widthCell, int heightCell) {
+        width = width/2;
+        height = height/2;
+
         Random rand = new Random();
         path = new ArrayList<>();
         boolean[][] field = new boolean[width][height];
 
         int[] current = new int[]{0, height/2};
         field[current[0]][current[1]] = true;
-        int[] target = new int[]{3, height/2};
+        int[] target = new int[]{width - 1, height/2};
+        path.add(new PathField(current[0] * widthCell, current[1] * heightCell, widthCell, heightCell));
 
         while(current[0] != target[0] || current[1] != target[1]) {
             ArrayList<int[]> candidates =  new ArrayList<>();
@@ -41,13 +46,15 @@ public class World {
 
             if (candidates.size() > 0) {
                 int[] next = candidates.get(rand.nextInt(candidates.size()));
-                path.add(new PathField(current[0] * widthCell, current[1] * heightCell, widthCell, heightCell));
                 current = next;
+                if (!field[current[0]][current[1]]) {
+                    path.add(new PathField(current[0] * widthCell, current[1] * heightCell, widthCell, heightCell));
+                    path.add(new PathField(current[0] * widthCell * 2, current[1] * heightCell * 2, widthCell, heightCell));
+                }
                 field[current[0]][current[1]] = true;
-
             }
             else if (path.size() > 0){
-
+                path.remove(path.size() - 1);
                 path.remove(path.size() - 1);
                 current = new int[]{path.get(path.size() - 1).getX() / widthCell, path.get(path.size() - 1).getY() / heightCell};
             }
