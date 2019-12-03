@@ -27,20 +27,20 @@ public class World {
         path = new ArrayList<>();
         boolean[][] field = new boolean[width][height];
 
-        int[] current = new int[]{0, height/2};
-        field[current[0]][current[1]] = true;
+        int[] current = new int[]{-1, height/2};
         int[] target = new int[]{width - 1, height/2};
-        path.add(new PathField(current[0] * widthCell * 2, current[1] * heightCell * 2, widthCell, heightCell));
+        path.add(new PathField(current[0] * widthCell * 2, current[1] * heightCell * 2, widthCell, heightCell, current[0], current[1]));
 
-        while(current[0] != target[0] || current[1] != target[1]) {
+        while(!(current[0] == target[0] && current[1] == target[1]) && !(current[0] == target[0] - 1 && current[1] == target[1]) ) {
             ArrayList<int[]> candidates =  new ArrayList<>();
             for (int x = -1; x <= 1; x+=2) {
+                System.out.println(current[1]);
                 if (current[0] + x >= 0 && current[0] + x < width && !field[current[0] + x][current[1]]) {
                     candidates.add(new int[]{current[0] + x, current[1]});
                 }
             }
             for (int y = -1; y <= 1; y+=2) {
-                if (current[1] + y >= 0 && current[1] + y < height && !field[current[0]][current[1] + y]) {
+                if (current[0] >= 0 && current[1] + y >= 0 && current[1] + y < height && !field[current[0]][current[1] + y]) {
                     candidates.add(new int[]{current[0], current[1] + y});
                 }
             }
@@ -48,8 +48,8 @@ public class World {
             if (candidates.size() > 0) {
                 int[] next = candidates.get(rand.nextInt(candidates.size()));
                 if (!field[next[0]][next[1]]) {
-                    path.add(new PathField(next[0] * widthCell * 2, next[1] * heightCell * 2, widthCell, heightCell));
-                    path.add(new PathField(next[0] + current[0] * widthCell, next[1] + current[1] * heightCell * 2, widthCell, heightCell));
+                    path.add(new PathField(next[0] * widthCell * 2, next[1] * heightCell * 2, widthCell, heightCell, next[0], next[1]));
+                    path.add(new PathField((next[0] + current[0]) * widthCell, (next[1] + current[1]) * heightCell, widthCell, heightCell, next[0], next[1]));
                 }
                 current = next;
 
@@ -59,10 +59,9 @@ public class World {
                 path.remove(path.size() - 1);
                 path.remove(path.size() - 1);
 
-                current = new int[]{path.get(path.size() - 1).getX() / widthCell, path.get(path.size() - 1).getY() / heightCell};
+                current = new int[]{path.get(path.size() - 1).getyInWorld(), path.get(path.size() - 1).getyInWorld()};
             }
         }
-        System.out.println(path.size());
 
     }
 
