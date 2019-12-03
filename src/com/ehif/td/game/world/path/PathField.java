@@ -8,12 +8,23 @@ public class PathField {
     private int width;
     private int height;
     private PathField  next;
+    private int xInWorld, yInWorld;
 
-    public PathField(int x, int y, int width, int height) {
+    public int getxInWorld() {
+        return xInWorld;
+    }
+
+    public int getyInWorld() {
+        return yInWorld;
+    }
+
+    public PathField(int x, int y, int width, int height, int xInWorld, int yInWorld) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
+        this.xInWorld = xInWorld;
+        this.yInWorld = yInWorld;
     }
 
     public int getX() {
