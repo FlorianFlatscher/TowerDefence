@@ -1,4 +1,4 @@
-package com.ehif.td.game.tower;
+package com.ehif.td.game.world.tower;
 
 public interface Tower {
     public void display();
