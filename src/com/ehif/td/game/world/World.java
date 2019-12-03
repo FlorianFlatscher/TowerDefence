@@ -19,50 +19,50 @@ public class World {
     }
 
     private void generatePath(int width, int height, int widthCell, int heightCell) {
-        width = width/2;
-        height = height/2;
+        width = width / 2;
+        height = height / 2;
 
 
         Random rand = new Random();
         path = new ArrayList<>();
         boolean[][] field = new boolean[width][height];
 
-        int[] current = new int[]{-1, height/2};
-        int[] target = new int[]{width - 1, height/2};
+        int[] current = new int[]{0, height / 2};
+        int[] target = new int[]{width - 1, height / 2};
+        field[current[0]][current[1]] = true;
         path.add(new PathField(current[0] * widthCell * 2, current[1] * heightCell * 2, widthCell, heightCell, current[0], current[1]));
-
-        while(!(current[0] == target[0] && current[1] == target[1]) && !(current[0] == target[0] - 1 && current[1] == target[1]) ) {
-            ArrayList<int[]> candidates =  new ArrayList<>();
-            for (int x = -1; x <= 1; x+=2) {
-                System.out.println(current[1]);
+        while (!(current[0] == target[0] && current[1] == target[1]) && !(current[0] == target[0] - 1 && current[1] == target[1])) {
+            ArrayList<int[]> candidates = new ArrayList<>();
+            for (int x = -1; x <= 1; x += 2) {
                 if (current[0] + x >= 0 && current[0] + x < width && !field[current[0] + x][current[1]]) {
                     candidates.add(new int[]{current[0] + x, current[1]});
                 }
             }
-            for (int y = -1; y <= 1; y+=2) {
-                if (current[0] >= 0 && current[1] + y >= 0 && current[1] + y < height && !field[current[0]][current[1] + y]) {
+            for (int y = -1; y <= 1; y += 2) {
+                if (current[1] + y >= 0 && current[1] + y < height && !field[current[0]][current[1] + y]) {
                     candidates.add(new int[]{current[0], current[1] + y});
                 }
             }
-
             if (candidates.size() > 0) {
                 int[] next = candidates.get(rand.nextInt(candidates.size()));
-                if (!field[next[0]][next[1]]) {
-                    path.add(new PathField(next[0] * widthCell * 2, next[1] * heightCell * 2, widthCell, heightCell, next[0], next[1]));
-                    path.add(new PathField((next[0] + current[0]) * widthCell, (next[1] + current[1]) * heightCell, widthCell, heightCell, next[0], next[1]));
-                }
+
+                path.add(new PathField((next[0] + current[0]) * widthCell, (next[1] + current[1]) * heightCell, widthCell, heightCell, next[0], next[1]));
+                path.add(new PathField(next[0] * widthCell * 2, next[1] * heightCell * 2, widthCell, heightCell, next[0], next[1]));
+
                 current = next;
 
                 field[current[0]][current[1]] = true;
-            }
-            else if (path.size() > 0){
+            } else  {
+                //path.remove(path.size() - 1);
+
                 path.remove(path.size() - 1);
                 path.remove(path.size() - 1);
 
-                current = new int[]{path.get(path.size() - 1).getyInWorld(), path.get(path.size() - 1).getyInWorld()};
+
+                current = new int[]{path.get(path.size() - 1).getxInWorld(), path.get(path.size() - 1).getyInWorld()};
             }
         }
-
+        //path.add(new PathField(target[0], ))
     }
 
     public void display(Sketch s, int x, int y) {
@@ -71,7 +71,7 @@ public class World {
         s.fill(255);
         s.rect(x, y, width, height);
         for (int i = 0; i < path.size(); i++) {
-            path.get(i).display(s, x, y, (int) s.map(i, 0, path.size(), 50, 255));
+            path.get(i).display(s, x, y);
         }
     }
 }
