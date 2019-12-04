@@ -4,13 +4,15 @@ import com.ehif.td.game.Game;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-    public static final int w = 800;
-    public static final int h = 600;
+
+    public static final int w = 1200;
+    public static final int h = 640;
+    public static final int UIheight = 300;
 
     private Game g;
     @Override
     public void settings() {
-        size(w, h);
+        size(w, h+UIheight);
 
     }
 

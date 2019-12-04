@@ -6,29 +6,27 @@ import com.ehif.td.game.ui.button.Button;
 import java.util.ArrayList;
 
 public class InGameMenu {
-    private int offset;
+
+    private int relativeHeight;
+
     private ArrayList<Button> buttons = new ArrayList<Button>();
 
-    public InGameMenu(int offset) {
-        this.offset = offset;
-    }
 
-    public InGameMenu() {
-        this.offset = 0;
-    }
+    public InGameMenu( int h) {
 
+        this.relativeHeight = h;
+    }
     public void add(Button b) {
+        b.setY(b.getY()+relativeHeight);
         buttons.add(b);
     }
 
-    public void display(Sketch s) throws NullPointerException {
-        try {
+    public void display(Sketch s){
+
             for (Button b : buttons) {
-                b.display(s);
+                b.display2(s);
             }
-        } catch (NullPointerException e) {
-            System.out.println("NullPointerException in UserInterface @ line 22");
-        }
+
     }
 
 }
