@@ -21,7 +21,7 @@ public abstract class Placeable {
 
     public abstract void update();
 
-    public abstract void display(Sketch s, float x, float y);
+    public abstract void display(Sketch s);
 
     public abstract boolean alive();
 
