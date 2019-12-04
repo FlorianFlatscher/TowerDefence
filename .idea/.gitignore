@@ -2,4 +2,4 @@
 # Default ignored files
 /workspace.xml
 
-/misc.xml
+.idea/libraries/misc.xml
