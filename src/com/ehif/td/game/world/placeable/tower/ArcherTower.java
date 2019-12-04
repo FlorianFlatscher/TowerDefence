@@ -1,5 +1,6 @@
 package com.ehif.td.game.world.placeable.tower;
 
+import com.ehif.td.Sketch;
 import com.ehif.td.game.world.World;
 import processing.core.PVector;
 
@@ -15,8 +16,9 @@ public class ArcherTower extends Tower {
     }
 
     @Override
-    public void display() {
-
+    public void display(Sketch s, float x, float y) {
+        s.ellipse(10, 10, 20, 20);
+        s.fill(0);
     }
 
     @Override
