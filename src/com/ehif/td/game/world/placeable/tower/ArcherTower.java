@@ -6,8 +6,8 @@ import processing.core.PVector;
 
 public class ArcherTower extends Tower {
 
-    public ArcherTower(World w, float x, float y) {
-        super(w, x, y, 150, 10, 100, 500);
+    public ArcherTower(World w, PVector pos) {
+        super(w, pos, 150, 10, 100, 500);
     }
 
     @Override
@@ -17,6 +17,8 @@ public class ArcherTower extends Tower {
 
     @Override
     public void display(Sketch s) {
+        s.strokeWeight(3);
+        s.stroke(0);
         s.ellipse(getX(), getY(), 20, 20);
         s.fill(255, 0 ,0);
     }

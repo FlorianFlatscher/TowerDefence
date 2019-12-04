@@ -4,6 +4,7 @@ import com.ehif.td.Sketch;
 import com.ehif.td.game.world.path.PathField;
 import com.ehif.td.game.world.placeable.Placeable;
 import com.ehif.td.game.world.placeable.tower.ArcherTower;
+import processing.core.PVector;
 import ui.mouse.MouseEvent;
 import ui.mouse.MouseListener;
 
@@ -21,19 +22,25 @@ public class World {
         generatePath(width / widthCell, height / heightCell, widthCell, heightCell);
         this.width = width;
         this.height = height;
-        placeables = new ArrayList<Placeable>();
-
         World w = this;
+        placeables = new ArrayList<Placeable>();
+        placeables.add(new ArcherTower(w, new PVector(10,10)));
+
+
         Sketch.mouseListeners.add(new MouseListener() {
             @Override
             public void mousePressed(MouseEvent e) {
-
+                for(int i = 0; i < placeables.size(); i++) {
+                    System.out.println("lol");
+                    if(placeables.get(i).getPlaceablePos().dist(new PVector(e.getMouseX(), e.getMouseY())) >= 20) {
+                        placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY())));
+                    }
+                }
             }
 
             @Override
             public void mouseClicked(MouseEvent e) {
-                placeables.add(new ArcherTower(w, e.getMouseX(), e.getMouseY()));
-                System.out.println("lol");
+
             }
 
             @Override

@@ -13,9 +13,9 @@ public abstract class Tower extends Placeable {
     private double damage;
     private int cost;
 
-    public Tower(World w, float x, float y, float radius, float fireSpeed, double damage, int cost) {
+    public Tower(World w, PVector pos, float radius, float fireSpeed, double damage, int cost) {
         super(w);
-        pos = new PVector(x, y);
+        this.pos = pos;
         this.radius = radius;
         this.fireSpeed = fireSpeed; // fireSpeed = ticks/100  (= 1sec => fireSpeed 10)
         this.damage = damage;
