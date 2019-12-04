@@ -1,6 +1,7 @@
 package com.ehif.td.game.world.placeable.tower;
 
 import com.ehif.td.game.world.World;
+import processing.core.PVector;
 
 public class ArcherTower extends Tower {
 
@@ -21,6 +22,11 @@ public class ArcherTower extends Tower {
     @Override
     public boolean alive() {
         return true;
+    }
+
+    @Override
+    public boolean pointInRadius(PVector p) {
+        return false;
     }
 }
 
