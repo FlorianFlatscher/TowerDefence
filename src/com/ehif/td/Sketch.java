@@ -5,9 +5,9 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 
-    public static final int w = 1200;
-    public static final int h = 640;
-    public static final int UIheight = 300;
+    public static final int w = 800;
+    public static final int h = 600;
+    public static final int UIheight = 180;
 
     private Game g;
     @Override
