@@ -30,6 +30,7 @@ public class World {
         int[] current = new int[]{0, height / 2};
         int[] target = new int[]{width - 1, height / 2};
         field[current[0]][current[1]] = true;
+
         path.add(new PathField(current[0] * widthCell * 2, current[1] * heightCell * 2, widthCell, heightCell, current[0], current[1]));
         while (!(current[0] == target[0] && current[1] == target[1]) && !(current[0] == target[0] - 1 && current[1] == target[1])) {
             ArrayList<int[]> candidates = new ArrayList<>();
@@ -62,7 +63,9 @@ public class World {
                 current = new int[]{path.get(path.size() - 1).getxInWorld(), path.get(path.size() - 1).getyInWorld()};
             }
         }
-        //path.add(new PathField(target[0], ))
+        while (path.get(path.size() - 1).getxInWorld() <= width + 1) {
+            path.add(new PathField(path.get(path.size() - 1).getX() + widthCell, path.get(path.size() - 1).getY(), widthCell, heightCell, path.get(path.size() - 1).getxInWorld() + 1, path.get(path.size() - 1).getY()));
+        }
     }
 
     public void display(Sketch s, int x, int y) {
