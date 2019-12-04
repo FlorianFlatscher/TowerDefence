@@ -4,8 +4,8 @@ import com.ehif.td.game.Game;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-    public static final int w = 1200;
-    public static final int h = 900;
+    public static final int w = 800;
+    public static final int h = 600;
 
     private Game g;
     @Override
