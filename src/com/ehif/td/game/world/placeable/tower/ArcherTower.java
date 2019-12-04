@@ -1,0 +1,26 @@
+package com.ehif.td.game.world.placeable.tower;
+
+import com.ehif.td.game.world.World;
+
+public class ArcherTower extends Tower {
+
+    public ArcherTower(World w, float x, float y) {
+        super(w, x, y, 150, 10, 100, 500);
+    }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public void display() {
+
+    }
+
+    @Override
+    public boolean alive() {
+        return true;
+    }
+}
+

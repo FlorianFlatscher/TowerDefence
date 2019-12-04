@@ -1,11 +1,11 @@
-package com.ehif.td.game.world.tower;
+package com.ehif.td.game.world.placeable.tower;
 
 import com.ehif.td.Sketch;
 import com.ehif.td.game.world.World;
+import com.ehif.td.game.world.placeable.Placeable;
 
-public abstract class Tower {
+public abstract class Tower extends Placeable {
 
-    private World w;
     private float x;
     private float y;
     private float radius;
@@ -14,7 +14,7 @@ public abstract class Tower {
     private int cost;
 
     public Tower(World w, float x, float y, float radius, float fireSpeed, double damage, int cost) {
-        this.w = w;
+        super(w);
         this.x = x;
         this.y = y;
         this.radius = radius;
@@ -47,14 +47,6 @@ public abstract class Tower {
         this.radius = radius;
     }
 
-    public World getW() {
-        return w;
-    }
-
-    public void setW(World w) {
-        this.w = w;
-    }
-
     public int getCost() {
         return cost;
     }
@@ -77,11 +69,5 @@ public abstract class Tower {
 
     public void setDamage(double damage) {
         this.damage = damage;
-    }
-    public void update(Sketch s){
-
-    }
-    public void display(Sketch s){
-
     }
 }
