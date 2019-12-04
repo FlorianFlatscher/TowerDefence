@@ -1,5 +1,6 @@
 package com.ehif.td.game.world.tower;
 
+import com.ehif.td.Sketch;
 import com.ehif.td.game.world.World;
 
 public abstract class Tower {
@@ -76,5 +77,11 @@ public abstract class Tower {
 
     public void setDamage(double damage) {
         this.damage = damage;
+    }
+    public void update(Sketch s){
+
+    }
+    public void display(Sketch s){
+
     }
 }
