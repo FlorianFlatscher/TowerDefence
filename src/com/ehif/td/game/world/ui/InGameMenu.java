@@ -1,18 +1,19 @@
 package com.ehif.td.game.world.ui;
 
 import com.ehif.td.Sketch;
+import com.ehif.td.game.world.ui.button.Button;
 
 import java.util.ArrayList;
 
-public class UserInterface {
+public class InGameMenu {
     private int offset;
     private ArrayList<Button> buttons = new ArrayList<Button>();
 
-    public UserInterface(int offset) {
+    public InGameMenu(int offset) {
         this.offset = offset;
     }
 
-    public UserInterface() {
+    public InGameMenu() {
         this.offset = 0;
     }
 

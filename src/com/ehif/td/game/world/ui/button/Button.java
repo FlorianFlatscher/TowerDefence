@@ -1,4 +1,4 @@
-package com.ehif.td.game.world.ui;
+package com.ehif.td.game.world.ui.button;
 
 import com.ehif.td.Sketch;
 import processing.core.PShape;
@@ -18,6 +18,5 @@ public class Button {
     }
     public void display(Sketch s){
         s.shape(this.p, x, y, width, height);
-
     }
 }
