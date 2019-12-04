@@ -1,5 +1,6 @@
 package com.ehif.td.game.world.placeable;
 
+import com.ehif.td.Sketch;
 import com.ehif.td.game.world.World;
 import processing.core.PVector;
 
@@ -20,7 +21,7 @@ public abstract class Placeable {
 
     public abstract void update();
 
-    public abstract void display();
+    public abstract void display(Sketch s, float x, float y);
 
     public abstract boolean alive();
 
