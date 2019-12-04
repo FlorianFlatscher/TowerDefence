@@ -39,7 +39,7 @@ public class PathField {
 
     public void display(Sketch s, int x, int y, int b) {
         s.noStroke();
-        s.fill(255, 0, 0, b);
+        s.fill(177,157,94, b);
         s.rect(x + this.x, y + this.y, width, height);
     }
 
