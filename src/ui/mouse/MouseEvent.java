@@ -20,7 +20,7 @@ public class MouseEvent {
         return mouseY;
     }
 
-    public Sketch getS() {
+    public Sketch getSketch() {
         return s;
     }
 }
