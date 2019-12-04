@@ -27,13 +27,13 @@ public class World {
         Sketch.mouseListeners.add(new MouseListener() {
             @Override
             public void mousePressed(MouseEvent e) {
-
+                placeables.add(new ArcherTower(w, e.getMouseX(), e.getMouseY()));
+                System.out.println("lol");
             }
 
             @Override
             public void mouseClicked(MouseEvent e) {
-                placeables.add(new ArcherTower(w, e.getMouseX(), e.getMouseY()));
-                System.out.println("lol");
+
             }
 
             @Override
