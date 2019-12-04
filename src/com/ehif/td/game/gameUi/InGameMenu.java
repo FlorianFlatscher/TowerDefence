@@ -1,7 +1,7 @@
-package com.ehif.td.game.ui;
+package com.ehif.td.game.gameUi;
 
 import com.ehif.td.Sketch;
-import com.ehif.td.game.ui.button.Button;
+import ui.button.Button;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,8 @@
 package com.ehif.td.game;
 
 import com.ehif.td.Sketch;
-import com.ehif.td.game.ui.InGameMenu;
-import com.ehif.td.game.ui.button.Button;
+import com.ehif.td.game.gameUi.InGameMenu;
+import ui.button.Button;
 import com.ehif.td.game.world.World;
 import processing.core.PShape;
 
