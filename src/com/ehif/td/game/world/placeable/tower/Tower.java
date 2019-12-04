@@ -78,5 +78,5 @@ public abstract class Tower extends Placeable {
         this.damage = damage;
     }
 
-    public abstract void display(Sketch s, float x, float y);
+    public abstract void display(Sketch s);
 }

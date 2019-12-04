@@ -16,9 +16,9 @@ public class ArcherTower extends Tower {
     }
 
     @Override
-    public void display(Sketch s, float x, float y) {
-        s.ellipse(10, 10, 20, 20);
-        s.fill(0);
+    public void display(Sketch s) {
+        s.ellipse(getX(), getY(), 20, 20);
+        s.fill(255, 0 ,0);
     }
 
     @Override
