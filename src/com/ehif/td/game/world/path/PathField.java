@@ -15,6 +15,8 @@ public class PathField {
     }
 
     public int getyInWorld() {
+
+
         return yInWorld;
     }
 
