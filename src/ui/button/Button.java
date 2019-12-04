@@ -17,18 +17,22 @@ public class Button {
         Sketch.mouseListeners.add(new MouseListener() {
             @Override
             public void mousePressed(MouseEvent e) {
-                System.out.println("mousePressed");
+                if(inBounds(e.getMouseX(), e.getMouseY()))
+                 System.out.println("mousePressed");
             }
 
             @Override
             public void mouseClicked(MouseEvent e) {
-                System.out.println("mouseClicked");
+                if(inBounds(e.getMouseX(), e.getMouseY()))
+                    System.out.println("mouseClicked");
 
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
+                if(inBounds(e.getMouseX(), e.getMouseY()))
                 System.out.println("mouseReleased");
+
 
             }
         });
@@ -50,7 +54,11 @@ public class Button {
     public void setY(int y) {
         this.y = y;
     }
-
+    private boolean inBounds(float x, float y){
+        if((x >= this.x && x <= this.x + this.width)&&(y >= this.y && y <= this.y +this.width))
+            return true;
+        return false;
+    }
     public void addEventListener(ButtonListener listener) {
         this.listener = listener;
     }
