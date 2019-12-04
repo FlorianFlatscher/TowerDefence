@@ -44,9 +44,13 @@ public class Button {
     }
 
     public void display(Sketch s){
+
         s.shape(this.p, x, y, width, height);
     }
-    public void display2(Sketch s){s.rect(x,y,width,height);}
+    public void display2(Sketch s){
+        s.fill(0, 0, 255);
+        s.rect(x,y,width,height);
+    }
     public int getY() {
         return y;
     }
