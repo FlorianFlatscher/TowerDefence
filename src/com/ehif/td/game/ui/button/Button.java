@@ -1,4 +1,4 @@
-package com.ehif.td.game.world.ui.button;
+package com.ehif.td.game.ui.button;
 
 import com.ehif.td.Sketch;
 import processing.core.PShape;
