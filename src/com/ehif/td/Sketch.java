@@ -12,7 +12,7 @@ public class Sketch extends PApplet {
     private Game g;
     @Override
     public void settings() {
-        size(w, h+UIheight);
+        size(w, h+InGameMenuHeight);
 
     }
 
