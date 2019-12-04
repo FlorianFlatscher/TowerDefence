@@ -7,7 +7,7 @@ public class Game {
     private World w;
 
     public Game(int width, int height) {
-        w = new World(Sketch.w, Sketch.h, Sketch.w/20, Sketch.h/16);
+        w = new World(Sketch.w, Sketch.h, Sketch.w/15, Sketch.h/12);
     }
 
     public void display(Sketch s) {
