@@ -22,11 +22,9 @@ public class InGameMenu {
     }
 
     public void display(Sketch s){
-
-            for (Button b : buttons) {
-                b.display2(s);
-            }
-
+        for (Button b : buttons) {
+            b.display2(s);
+        }
     }
 
 }

@@ -5,14 +5,14 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 
-    public static final int w = 1200;
-    public static final int h = 640;
-    public static final int UIheight = 300;
+    public static final int w = 1000;
+    public static final int h = 600;
+    public static final int InGameMenuHeight = 200;
 
     private Game g;
     @Override
     public void settings() {
-        size(w, h+UIheight);
+        size(w, h+ InGameMenuHeight);
 
     }
 

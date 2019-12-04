@@ -69,8 +69,7 @@ public class World {
     }
 
     public void display(Sketch s, int x, int y) {
-        s.strokeWeight(3);
-        s.stroke(0);
+        s.noStroke();
         s.fill(0, 255, 0);
         s.rect(x, y, width, height);
         for (int i = 0; i < path.size(); i++) {
