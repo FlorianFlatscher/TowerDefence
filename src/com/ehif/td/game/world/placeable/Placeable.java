@@ -6,11 +6,11 @@ import processing.core.PVector;
 
 public abstract class Placeable {
     private World w;
-    private PVector placeablePos;
+    private PVector pos;
 
-    public Placeable(World w) {
+    public Placeable(World w, PVector pos) {
         this.w = w;
-        this.placeablePos = placeablePos;
+        this.pos = pos;
     }
 
     public World getW() {
@@ -30,11 +30,11 @@ public abstract class Placeable {
     public abstract boolean pointInRadius(PVector p);
 
     public PVector getPlaceablePos() {
-        return placeablePos;
+        return pos;
     }
 
     public void setPlaceablePos(PVector placeablePos) {
-        this.placeablePos = placeablePos;
+        this.pos = placeablePos;
     }
 
 

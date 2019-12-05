@@ -23,19 +23,34 @@ public class World {
         this.width = width;
         this.height = height;
         World w = this;
-        placeables = new ArrayList<Placeable>();
-        placeables.add(new ArcherTower(w, new PVector(10,10)));
+        placeables = new ArrayList<>();
 
 
         Sketch.mouseListeners.add(new MouseListener() {
             @Override
             public void mousePressed(MouseEvent e) {
-                for(int i = 0; i < placeables.size(); i++) {
-                    System.out.println("lol");
-                    if(placeables.get(i).getPlaceablePos().dist(new PVector(e.getMouseX(), e.getMouseY())) >= 20) {
-                        placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY())));
+
+                if (placeables.size() >= 1) {
+                    System.out.println("nobba");
+                    for (int i = 0; i < placeables.size(); i++) {
+                        System.out.println(placeables.get(i).getPlaceablePos());
+                        System.out.println(placeables.size());
+                        if (placeables.get(i).getPlaceablePos().dist(new PVector(e.getMouseX(), e.getMouseY())) >= 50) {
+                            placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY())));
+                            break;
+                        }
                     }
                 }
+
+                if (placeables.size() == 0) {
+                    placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY())));
+                    System.out.println(placeables.size());
+                    System.out.println(placeables.get(0).getPlaceablePos());
+                }
+
+
+
+
             }
 
             @Override
@@ -47,7 +62,7 @@ public class World {
             public void mouseReleased(MouseEvent e) {
 
             }
-            });
+        });
     }
 
     private void generatePath(int width, int height, int widthCell, int heightCell) {
@@ -85,7 +100,7 @@ public class World {
                 current = next;
 
                 field[current[0]][current[1]] = true;
-            } else  {
+            } else {
                 //path.remove(path.size() - 1);
 
                 path.remove(path.size() - 1);
@@ -101,7 +116,6 @@ public class World {
     }
 
 
-
     public void display(Sketch s, int x, int y) {
         s.noStroke();
         s.fill(0, 255, 0);
@@ -109,7 +123,7 @@ public class World {
         for (int i = 0; i < path.size(); i++) {
             path.get(i).display(s, x, y);
         }
-        for( int i = 0; i < placeables.size(); i++) {
+        for (int i = 0; i < placeables.size(); i++) {
             placeables.get(i).display(s);
         }
     }
