@@ -1,21 +1,31 @@
 package com.ehif.td;
 
 import com.ehif.td.game.Game;
+import engine.Updateable;
 import processing.core.PApplet;
+import ui.mouse.MouseEvent;
+import ui.mouse.MouseListener;
+
+import java.util.ArrayList;
 
 public class Sketch extends PApplet {
-    public static final int w = 1200;
-    public static final int h = 900;
+
+    public static final int w = 1000;
+    public static final int h = 600;
+    public static final int InGameMenuHeight = 200;
+
+    public static ArrayList<MouseListener> mouseListeners;
+
 
     private Game g;
     @Override
     public void settings() {
-        size(w, h);
-
+        size(w, h+InGameMenuHeight);
     }
 
     @Override
     public void setup() {
+        mouseListeners = new ArrayList<>();
         g = new Game(w, h);
     }
 
@@ -27,5 +37,31 @@ public class Sketch extends PApplet {
 
     public static void main (String[] args) {
         PApplet.main("com.ehif.td.Sketch");
+    }
+
+
+
+    //Event handling
+
+
+    @Override
+    public void mousePressed() {
+        for (MouseListener l: mouseListeners) {
+            l.mousePressed(new MouseEvent(this, mouseX, mouseY));
+        }
+    }
+
+    @Override
+    public void mouseClicked() {
+        for (MouseListener l: mouseListeners) {
+            l.mouseClicked(new MouseEvent(this, mouseX, mouseY));
+        }
+    }
+
+    @Override
+    public void mouseReleased() {
+        for (MouseListener l: mouseListeners) {
+            l.mouseReleased(new MouseEvent(this, mouseX, mouseY));
+        }
     }
 }

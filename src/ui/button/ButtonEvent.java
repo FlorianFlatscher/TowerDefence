@@ -1,4 +1,4 @@
-package com.ehif.td.game.ui.button;
+package ui.button;
 
 public class ButtonEvent {
     private Button b;

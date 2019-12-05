@@ -2,6 +2,11 @@ package com.ehif.td.game.world;
 
 import com.ehif.td.Sketch;
 import com.ehif.td.game.world.path.PathField;
+import com.ehif.td.game.world.placeable.Placeable;
+import com.ehif.td.game.world.placeable.tower.ArcherTower;
+import processing.core.PVector;
+import ui.mouse.MouseEvent;
+import ui.mouse.MouseListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,12 +15,39 @@ import java.util.Random;
 public class World {
     private ArrayList<PathField> path;
     private int width, height;
+    private ArrayList<Placeable> placeables;
 
     public World(int width, int height, int widthCell, int heightCell) {
 
         generatePath(width / widthCell, height / heightCell, widthCell, heightCell);
         this.width = width;
         this.height = height;
+        World w = this;
+        placeables = new ArrayList<Placeable>();
+        placeables.add(new ArcherTower(w, new PVector(10,10)));
+
+
+        Sketch.mouseListeners.add(new MouseListener() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                for(int i = 0; i < placeables.size(); i++) {
+                    System.out.println("lol");
+                    if(placeables.get(i).getPlaceablePos().dist(new PVector(e.getMouseX(), e.getMouseY())) >= 20) {
+                        placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY())));
+                    }
+                }
+            }
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+            });
     }
 
     private void generatePath(int width, int height, int widthCell, int heightCell) {
@@ -68,13 +100,17 @@ public class World {
         }
     }
 
+
+
     public void display(Sketch s, int x, int y) {
-        s.strokeWeight(3);
-        s.stroke(0);
+        s.noStroke();
         s.fill(0, 255, 0);
         s.rect(x, y, width, height);
         for (int i = 0; i < path.size(); i++) {
             path.get(i).display(s, x, y);
+        }
+        for( int i = 0; i < placeables.size(); i++) {
+            placeables.get(i).display(s);
         }
     }
 }
