@@ -30,23 +30,7 @@ public class World {
             @Override
             public void mousePressed(MouseEvent e) {
 
-                if (placeables.size() >= 1) {
-                    System.out.println("nobba");
-                    for (int i = 0; i < placeables.size(); i++) {
-                        System.out.println(placeables.get(i).getPlaceablePos());
-                        System.out.println(placeables.size());
-                        if (placeables.get(i).getPlaceablePos().dist(new PVector(e.getMouseX(), e.getMouseY())) >= 50) {
-                            placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY())));
-                            break;
-                        }
-                    }
-                }
 
-                if (placeables.size() == 0) {
-                    placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY())));
-                    System.out.println(placeables.size());
-                    System.out.println(placeables.get(0).getPlaceablePos());
-                }
 
 
 
@@ -55,7 +39,21 @@ public class World {
 
             @Override
             public void mouseClicked(MouseEvent e) {
+                if (placeables.size() >= 1) {
 
+                    for (int i = 0; i < placeables.size(); i++) {
+
+                        if (placeables.get(i).getPlaceablePos().dist(new PVector(e.getMouseX(), e.getMouseY(), 0))>=10){
+                            placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY())));
+                            break;
+                        }
+                    }
+                }
+                else if (placeables.size() == 0) {
+                    placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY())));
+
+
+                }
             }
 
             @Override
