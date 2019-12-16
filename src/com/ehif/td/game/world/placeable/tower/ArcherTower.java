@@ -2,12 +2,16 @@ package com.ehif.td.game.world.placeable.tower;
 
 import com.ehif.td.Sketch;
 import com.ehif.td.game.world.World;
+import com.ehif.td.game.world.placeable.Hitbox;
+import com.ehif.td.game.world.placeable.RectHitbox;
+import org.w3c.dom.css.Rect;
 import processing.core.PVector;
 
 public class ArcherTower extends Tower {
 
     public ArcherTower(World w, PVector pos) {
-        super(w, pos, 150, 10, 100, 500);
+
+        super(w, pos, 150, 10, 100, 500, new RectHitbox());
     }
 
     @Override
@@ -19,8 +23,10 @@ public class ArcherTower extends Tower {
     public void display(Sketch s) {
         s.strokeWeight(3);
         s.stroke(0);
-        s.ellipse(getX(), getY(), 20, 20);
         s.fill(255, 0 ,0);
+        s.rect(pos.x, pos.y, 20, 20);
+
+
     }
 
     @Override
