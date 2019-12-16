@@ -44,12 +44,23 @@ public class Button {
     }
 
     public void display(Sketch s){
-
-        s.shape(this.p, x, y, width, height);
-    }
-    public void display2(Sketch s){
-        s.fill(0, 0, 255);
-        s.rect(x,y,width,height);
+        s.pushMatrix();
+        s.translate(x + width/2, y + height/2);
+        s.rectMode(s.CENTER);
+        s.stroke(0);
+        s.strokeWeight(2);
+        if (inBounds(s.mouseX, s.mouseY)) {
+            s.fill(50, 50, 255);
+            if (s.mousePressed) {
+                s.scale(0.9f);
+            }
+        } else {
+            s.fill(0, 0, 255);
+        }
+        s.rect(0, 0,width,height);
+        s.shape(this.p, 0, 0, width, height);
+        s.rectMode(s.CORNER);
+        s.popMatrix();
     }
     public int getY() {
         return y;

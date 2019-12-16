@@ -22,8 +22,11 @@ public class InGameMenu {
     }
 
     public void display(Sketch s){
+        s.fill(150);
+        s.noStroke();
+        s.rect(0, relativeHeight,s.width, s.height - relativeHeight);
         for (Button b : buttons) {
-            b.display2(s);
+            b.display(s);
         }
     }
 
