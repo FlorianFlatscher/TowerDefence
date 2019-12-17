@@ -3,6 +3,7 @@ package com.ehif.td;
 import com.ehif.td.game.Game;
 import engine.Updateable;
 import processing.core.PApplet;
+import ui.images.ImageLoader;
 import ui.mouse.MouseEvent;
 import ui.mouse.MouseListener;
 
@@ -20,6 +21,7 @@ public class Sketch extends PApplet {
     private Game g;
     @Override
     public void settings() {
+        ImageLoader.loadImages();
         size(w, h+InGameMenuHeight);
     }
 

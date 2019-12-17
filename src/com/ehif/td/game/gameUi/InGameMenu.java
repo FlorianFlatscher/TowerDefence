@@ -13,9 +13,9 @@ public class InGameMenu {
 
 
     public InGameMenu( int h) {
-
         this.relativeHeight = h;
     }
+
     public void add(Button b) {
         b.setY(b.getY()+relativeHeight);
         buttons.add(b);
