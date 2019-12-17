@@ -11,7 +11,7 @@ public class ArcherTower extends Tower {
 
     public ArcherTower(World w, PVector pos) {
 
-        super(w, pos, 150, 10, 100, 500, new RectHitbox());
+        super(w, pos, 150, 10, 100, 500, new RectHitbox(pos, 20, 20));
     }
 
     @Override

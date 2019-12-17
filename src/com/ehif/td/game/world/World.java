@@ -4,6 +4,7 @@ import com.ehif.td.Sketch;
 import com.ehif.td.game.world.path.PathField;
 import com.ehif.td.game.world.placeable.Placeable;
 import com.ehif.td.game.world.placeable.tower.ArcherTower;
+import com.ehif.td.game.world.placeable.tower.Tower;
 import processing.core.PVector;
 import ui.mouse.MouseEvent;
 import ui.mouse.MouseListener;
@@ -33,7 +34,16 @@ public class World {
                     placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY(), 0)));
                 }
                 else{
-
+                    ArcherTower tower = new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY(), 0));
+                    ArrayList<Boolean> check = new ArrayList<Boolean>();
+                    for(Placeable p: placeables){
+                        if(p.getHitbox().inRange(tower.getHitbox())){
+                            check.add(true);
+                        }
+                    }
+                    if(check.isEmpty()){
+                        placeables.add(tower);
+                    }
                 }
             }
 
