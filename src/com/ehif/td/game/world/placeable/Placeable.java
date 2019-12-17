@@ -37,7 +37,7 @@ public abstract class Placeable {
     public void setPlaceablePos(PVector placeablePos) {
         this.pos = placeablePos;
     }
-
+    public Hitbox getHitbox(){return hitbox;}
 
 
 }
