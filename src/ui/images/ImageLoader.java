@@ -1,5 +1,6 @@
 package ui.images;
 
+import com.ehif.td.Sketch;
 import processing.core.PGraphics;
 import processing.core.PShape;
 
@@ -10,16 +11,21 @@ import java.util.HashMap;
 import java.nio.file.*;
 
 public class ImageLoader {
-    public static HashMap<String, PShape> data;
+    public static HashMap<String, PShape> data = new HashMap<>();
     public static void loadImages() {
-        loadFolder("../data");
-    }
+        loadFolder(new File("src\\ui\\images\\data"));
+}
 
-    private static void loadFolder(String path) {
+    private static void loadFolder(File dir) {
         PGraphics pg = new PGraphics();
-        File dir = new File("path");
         File [] files = dir.listFiles();
+        for (File file: files) {
+            if (file.isDirectory()) {
+                loadFolder(file);
+            } else {
 
-        System.out.print(files.length);
+                data.put(file.getName(), Sketch.s.loadShape(file.getPath()));
+            }
+        }
     }
 }

@@ -41,6 +41,7 @@ public class Button {
         this.width = width;
         this.height = height;
         this.p = p;
+        p.disableStyle();
     }
 
     public void display(Sketch s){
@@ -50,15 +51,18 @@ public class Button {
         s.stroke(0);
         s.strokeWeight(2);
         if (inBounds(s.mouseX, s.mouseY)) {
-            s.fill(50, 50, 255);
+            s.fill(250, 250, 255);
             if (s.mousePressed) {
                 s.scale(0.9f);
             }
         } else {
-            s.fill(0, 0, 255);
+            s.fill(255);
         }
         s.rect(0, 0,width,height);
-        s.shape(this.p, 0, 0, width, height);
+        s.shapeMode(s.CENTER);
+        s.fill(255, 0, 0);
+        s.noStroke();
+        s.shape(this.p, 0, 0, Math.min(width, height) - 10, Math.min(width, height) - 10);
         s.rectMode(s.CORNER);
         s.popMatrix();
     }
