@@ -30,24 +30,30 @@ public class World {
         Sketch.mouseListeners.add(new MouseListener() {
             @Override
             public void mousePressed(MouseEvent e) {
-                if(placeables.size()==0){
-                    placeables.add(new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY(), 0)));
+                ArrayList<Boolean> check = new ArrayList<Boolean>();
+                ArcherTower tower = new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY(), 0));
+                if(e.getMouseY()>w.getHeight()||e.getMouseX()>w.getWidth())
+                    check.add(true);
+                for(PathField p: path){
+                    if(p.getHitbox().inRange(tower.getHitbox()))
+                        check.add(true);
+                }
+                if(placeables.size()==0&&check.isEmpty()){
+                   placeables.add(tower);
                 }
                 else{
-                    ArcherTower tower = new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY(), 0));
-                    ArrayList<Boolean> check = new ArrayList<Boolean>();
+
+
                     for(Placeable p: placeables){
                         if(p.getHitbox().inRange(tower.getHitbox())){
                             check.add(true);
                         }
                     }
-                    for(PathField p: path){
-                        if(p.getHitbox().inRange(tower.getHitbox()))
-                            check.add(true);
-                    }
+
                     if(check.isEmpty()){
                         placeables.add(tower);
                     }
+                    System.out.println(placeables.size());
                 }
             }
 
@@ -113,6 +119,14 @@ public class World {
         }
     }
 
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 
     public void display(Sketch s, int x, int y) {
         s.noStroke();
