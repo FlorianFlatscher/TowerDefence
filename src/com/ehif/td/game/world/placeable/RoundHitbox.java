@@ -18,7 +18,34 @@ public class RoundHitbox implements Hitbox {
             if((pos.dist(rh.getPos()))<=this.radius+rh.radius)
                 return true;
         }
+        else if(h instanceof  RectHitbox) {
+            RectHitbox rh = (RectHitbox) h;
+            if((pos.x > rh.getPos().x&&pos.x <= rh.getPos().x + rh.getWidth())&&(pos.y > rh.getPos().y&&pos.y < rh.getPos().y+rh.getHeight())){
+                return true;
+            }
+            else if(checkWidth(5, rh)||checkHeight(5, rh))
+                return true;
+        }
         return false;
 
     }
+    private boolean checkWidth(int points, RectHitbox h){
+        for(int i=1;i<h.getWidth()+h.getPos().x;i-=-points){
+            if(pos.dist(new PVector(h.getPos().x/i,h.getPos().y,0))<=radius)
+                return true;
+            else if(pos.dist(new PVector(h.getPos().x/i,h.getPos().y+h.getHeight(),0))<=radius)
+                return true;
+        }
+        return false;
+    }
+    private boolean checkHeight(int points, RectHitbox h){
+        for(int i=1;i<h.getHeight()+h.getPos().y;i-=-points){
+            if(pos.dist(new PVector(h.getPos().x,h.getPos().y/i,0))<=radius)
+                return true;
+            else if(pos.dist(new PVector(h.getPos().x+h.getWidth(),h.getPos().y/i,0))<=radius)
+                return true;
+        }
+        return false;
+    }
+
 }
