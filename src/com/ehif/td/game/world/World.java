@@ -41,6 +41,10 @@ public class World {
                             check.add(true);
                         }
                     }
+                    for(PathField p: path){
+                        if(p.getHitbox().inRange(tower.getHitbox()))
+                            check.add(true);
+                    }
                     if(check.isEmpty()){
                         placeables.add(tower);
                     }
