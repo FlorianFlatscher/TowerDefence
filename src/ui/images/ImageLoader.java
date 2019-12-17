@@ -1,29 +1,25 @@
 package ui.images;
 
+import processing.core.PGraphics;
 import processing.core.PShape;
 
 import java.io.File;
+import java.net.URI;
+import java.nio.file.spi.FileSystemProvider;
 import java.util.HashMap;
+import java.nio.file.*;
 
 public class ImageLoader {
-    public static HashMap<String, File> data;
+    public static HashMap<String, PShape> data;
     public static void loadImages() {
-        loadFolder("../../../gameFiles/images");
+        loadFolder("../data");
     }
 
     private static void loadFolder(String path) {
-        File folder = new File(path);
-        if (!folder.isDirectory()) {
-            throw new Error("Path is not a directory!");
-        }
-        String[] filenames = folder.list();
-        for (String s: filenames) {
-            File file = new File(path+"/"+s);
-            if (file.isDirectory()) {
-                loadFolder(file.getPath());
-            } else {
-                data.put(s, file);
-            }
-        }
+        PGraphics pg = new PGraphics();
+        File dir = new File("path");
+        File [] files = dir.listFiles();
+
+        System.out.print(files.length);
     }
 }
