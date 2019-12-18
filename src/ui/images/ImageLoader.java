@@ -23,7 +23,6 @@ public class ImageLoader {
             if (file.isDirectory()) {
                 loadFolder(file);
             } else {
-
                 data.put(file.getName(), Sketch.s.loadShape(file.getPath()));
             }
         }

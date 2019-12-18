@@ -27,10 +27,9 @@ public class RoundHitbox implements Hitbox {
                 return true;
         }
         return false;
-
     }
     private boolean checkWidth(int points, RectHitbox h){
-        for(int i=1;i<h.getWidth()+h.getPos().x;i-=-points){
+        for(int i=1;i<=points;i-=-1){
             if(pos.dist(new PVector(h.getPos().x/i,h.getPos().y,0))<=radius)
                 return true;
             else if(pos.dist(new PVector(h.getPos().x/i,h.getPos().y+h.getHeight(),0))<=radius)
@@ -39,7 +38,7 @@ public class RoundHitbox implements Hitbox {
         return false;
     }
     private boolean checkHeight(int points, RectHitbox h){
-        for(int i=1;i<h.getHeight()+h.getPos().y;i-=-points){
+        for(int i=1;i<=points;i-=-1){
             if(pos.dist(new PVector(h.getPos().x,h.getPos().y/i,0))<=radius)
                 return true;
             else if(pos.dist(new PVector(h.getPos().x+h.getWidth(),h.getPos().y/i,0))<=radius)

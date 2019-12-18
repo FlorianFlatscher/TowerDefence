@@ -20,6 +20,7 @@ public class Game {
         menu = new InGameMenu(Sketch.h);
 
         menu.add(new Button(50, 50, 100, 50, ImageLoader.data.get("pause.svg")));
+        menu.add(new Button(200, 50, 100, 50, ImageLoader.data.get("pause.svg")));
     }
 
     public void display(Sketch s) {

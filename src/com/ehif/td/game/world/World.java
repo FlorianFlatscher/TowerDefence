@@ -3,7 +3,9 @@ package com.ehif.td.game.world;
 import com.ehif.td.Sketch;
 import com.ehif.td.game.world.path.PathField;
 import com.ehif.td.game.world.placeable.Placeable;
+import com.ehif.td.game.world.placeable.RoundHitbox;
 import com.ehif.td.game.world.placeable.tower.ArcherTower;
+import com.ehif.td.game.world.placeable.tower.BombTower;
 import com.ehif.td.game.world.placeable.tower.Tower;
 import processing.core.PVector;
 import ui.mouse.MouseEvent;
@@ -17,7 +19,7 @@ public class World {
     private ArrayList<PathField> path;
     private int width, height;
     private ArrayList<Placeable> placeables;
-
+    BombTower b = new BombTower(this, new PVector(50, 50,0));
     public World(int width, int height, int widthCell, int heightCell) {
 
         generatePath(width / widthCell, height / heightCell, widthCell, heightCell);
@@ -30,15 +32,15 @@ public class World {
         Sketch.mouseListeners.add(new MouseListener() {
             @Override
             public void mousePressed(MouseEvent e) {
-                ArrayList<Boolean> check = new ArrayList<Boolean>();
+                boolean check = false;
                 ArcherTower tower = new ArcherTower(w, new PVector(e.getMouseX(), e.getMouseY(), 0));
                 if(e.getMouseY()>w.getHeight()||e.getMouseX()>w.getWidth())
-                    check.add(true);
+                    check = true;
                 for(PathField p: path){
                     if(p.getHitbox().inRange(tower.getHitbox()))
-                        check.add(true);
+                        check = true;
                 }
-                if(placeables.size()==0&&check.isEmpty()){
+                if(placeables.size()==0&&!check){
                    placeables.add(tower);
                 }
                 else{
@@ -46,11 +48,13 @@ public class World {
 
                     for(Placeable p: placeables){
                         if(p.getHitbox().inRange(tower.getHitbox())){
-                            check.add(true);
+                            check = true;
                         }
                     }
+                    if(b.getHitbox().inRange(tower.getHitbox()))
+                        check = true;
 
-                    if(check.isEmpty()){
+                    if(!check){
                         placeables.add(tower);
                     }
                     System.out.println(placeables.size());
@@ -64,7 +68,7 @@ public class World {
 
             @Override
             public void mouseReleased(MouseEvent e) {
-
+               
             }
         });
     }
@@ -138,5 +142,6 @@ public class World {
         for (int i = 0; i < placeables.size(); i++) {
             placeables.get(i).display(s);
         }
+        b.display(s);
     }
 }
