@@ -40,6 +40,8 @@ public class World {
                     if(p.getHitbox().inRange(tower.getHitbox()))
                         check = true;
                 }
+                if(b.getHitbox().inRange(tower.getHitbox()))
+                    check = true;
                 if(placeables.size()==0&&!check){
                    placeables.add(tower);
                 }
