@@ -1,6 +1,7 @@
 package com.ehif.td.game.world.placeable;
 
 import com.ehif.td.Sketch;
+import com.ehif.td.game.hitboxes.Hitbox;
 import com.ehif.td.game.world.World;
 import processing.core.PVector;
 

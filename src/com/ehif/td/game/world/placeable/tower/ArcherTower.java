@@ -2,9 +2,7 @@ package com.ehif.td.game.world.placeable.tower;
 
 import com.ehif.td.Sketch;
 import com.ehif.td.game.world.World;
-import com.ehif.td.game.world.placeable.Hitbox;
-import com.ehif.td.game.world.placeable.RectHitbox;
-import org.w3c.dom.css.Rect;
+import com.ehif.td.game.hitboxes.RectHitbox;
 import processing.core.PVector;
 
 public class ArcherTower extends Tower {

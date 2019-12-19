@@ -1,5 +1,7 @@
 package com.ehif.td.game.world.placeable.obstacle;
 
-public abstract class Obstacle {
+import processing.core.PVector;
 
+public abstract class Obstacle {
+    private PVector pos;
 }

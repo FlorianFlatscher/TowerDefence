@@ -2,8 +2,7 @@ package com.ehif.td.game.world.placeable.tower;
 
 import com.ehif.td.Sketch;
 import com.ehif.td.game.world.World;
-import com.ehif.td.game.world.placeable.RectHitbox;
-import com.ehif.td.game.world.placeable.RoundHitbox;
+import com.ehif.td.game.hitboxes.RoundHitbox;
 import processing.core.PVector;
 
 public class BombTower extends Tower {

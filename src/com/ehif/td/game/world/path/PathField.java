@@ -1,8 +1,8 @@
 package com.ehif.td.game.world.path;
 
 import com.ehif.td.Sketch;
-import com.ehif.td.game.world.placeable.Hitbox;
-import com.ehif.td.game.world.placeable.RectHitbox;
+import com.ehif.td.game.hitboxes.Hitbox;
+import com.ehif.td.game.hitboxes.RectHitbox;
 import processing.core.PVector;
 
 public class PathField {

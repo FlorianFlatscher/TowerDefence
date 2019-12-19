@@ -16,5 +16,8 @@ public class Player {
     public int getScore() {
         return score;
     }
+    public String getCurrentTower(){
+        return currentTower;
+    }
 
 }

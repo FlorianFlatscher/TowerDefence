@@ -3,16 +3,13 @@ package com.ehif.td.game.world;
 import com.ehif.td.Sketch;
 import com.ehif.td.game.world.path.PathField;
 import com.ehif.td.game.world.placeable.Placeable;
-import com.ehif.td.game.world.placeable.RoundHitbox;
 import com.ehif.td.game.world.placeable.tower.ArcherTower;
 import com.ehif.td.game.world.placeable.tower.BombTower;
-import com.ehif.td.game.world.placeable.tower.Tower;
 import processing.core.PVector;
 import ui.mouse.MouseEvent;
 import ui.mouse.MouseListener;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class World {

@@ -1,4 +1,4 @@
-package com.ehif.td.game.world.placeable;
+package com.ehif.td.game.hitboxes;
 
 import processing.core.PVector;
 
@@ -20,7 +20,7 @@ public class RoundHitbox implements Hitbox {
         }
         else if(h instanceof  RectHitbox) {
             RectHitbox rh = (RectHitbox) h;
-            System.out.println("hello");
+
             if((pos.x > rh.getPos().x&&pos.x <= rh.getPos().x + rh.getWidth())&&(pos.y > rh.getPos().y&&pos.y < rh.getPos().y+rh.getHeight())){
                 return true;
             }
@@ -49,4 +49,7 @@ public class RoundHitbox implements Hitbox {
         return false;
     }
 
+    public double getRadius() {
+        return radius;
+    }
 }
