@@ -24,7 +24,7 @@ public class RoundHitbox implements Hitbox {
             if((pos.x > rh.getPos().x&&pos.x <= rh.getPos().x + rh.getWidth())&&(pos.y > rh.getPos().y&&pos.y < rh.getPos().y+rh.getHeight())){
                 return true;
             }
-            else if(checkWidth(5, rh)||checkHeight(5, rh))
+            else if(checkWidth(10, rh)||checkHeight(10, rh))
                 return true;
         }
         return false;
@@ -32,7 +32,7 @@ public class RoundHitbox implements Hitbox {
     private boolean checkWidth(int points, RectHitbox h){
 
         for(int i=1;i<=points;i-=-1){
-            if(pos.dist(new PVector(h.getPos().x+h.getWidth()/points * i,h.getPos().y,0))<=radius)
+            if(pos.dist(new PVector(h.getPos().x+h.getWidth()/points * i,h.getPos().y,0))<=radius-4)
                 return true;
             else if(pos.dist(new PVector(h.getPos().x+h.getWidth()/points * i,h.getPos().y+h.getHeight(),0))<=radius)
                 return true;
@@ -41,7 +41,7 @@ public class RoundHitbox implements Hitbox {
     }
     private boolean checkHeight(int points, RectHitbox h){
         for(int i=1;i<=points;i-=-1){
-            if(pos.dist(new PVector(h.getPos().x,h.getPos().y+h.getHeight()/points * i,0))<=radius)
+            if(pos.dist(new PVector(h.getPos().x,h.getPos().y+h.getHeight()/points * i,0))<=radius - 2)
                 return true;
             else if(pos.dist(new PVector(h.getPos().x+h.getWidth(),h.getPos().y+h.getHeight()/points * i,0))<=radius)
                 return true;

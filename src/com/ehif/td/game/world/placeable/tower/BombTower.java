@@ -9,8 +9,9 @@ import processing.core.PVector;
 public class BombTower extends Tower {
 
     public BombTower(World w, PVector pos){
-        super(w, pos, 20, 150, 10, 100, new RoundHitbox(pos, 15));
+        super(w, pos, 20, 150, 10, 100, new RoundHitbox(pos, 7.5));
     }
+
     public void display(Sketch s){
         s.fill(0,0,255);
         s.ellipse(pos.x, pos.y, 15, 15);
