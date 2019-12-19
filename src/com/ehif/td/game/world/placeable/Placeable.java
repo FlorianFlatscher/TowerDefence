@@ -6,9 +6,12 @@ import processing.core.PVector;
 
 public abstract class Placeable {
     private World w;
-
-    public Placeable(World w) {
+    private PVector pos;
+    private Hitbox hitbox;
+    public Placeable(World w, PVector pos, Hitbox h) {
         this.w = w;
+        this.pos = pos;
+        this.hitbox = h;
     }
 
     public World getW() {
@@ -26,4 +29,15 @@ public abstract class Placeable {
     public abstract boolean alive();
 
     public abstract boolean pointInRadius(PVector p);
+
+    public PVector getPlaceablePos() {
+        return pos;
+    }
+
+    public void setPlaceablePos(PVector placeablePos) {
+        this.pos = placeablePos;
+    }
+    public Hitbox getHitbox(){return hitbox;}
+
+
 }

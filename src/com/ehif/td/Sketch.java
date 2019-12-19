@@ -3,6 +3,8 @@ package com.ehif.td;
 import com.ehif.td.game.Game;
 import engine.Updateable;
 import processing.core.PApplet;
+import processing.core.PShape;
+import ui.images.ImageLoader;
 import ui.mouse.MouseEvent;
 import ui.mouse.MouseListener;
 
@@ -16,15 +18,19 @@ public class Sketch extends PApplet {
 
     public static ArrayList<MouseListener> mouseListeners;
 
+    public static Sketch s;
 
     private Game g;
     @Override
     public void settings() {
+
         size(w, h+InGameMenuHeight);
     }
 
     @Override
     public void setup() {
+        s = this;
+        ImageLoader.loadImages();
         mouseListeners = new ArrayList<>();
         g = new Game(w, h);
     }
