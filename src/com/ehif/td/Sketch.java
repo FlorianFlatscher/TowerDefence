@@ -42,10 +42,11 @@ public class Sketch extends PApplet {
     }
 
     public static void main (String[] args) {
+        System.out.println("Main");
         PApplet.main("com.ehif.td.Sketch");
     }
 
-
+ 
 
     //Event handling
 

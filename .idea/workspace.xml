@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c883b3d9-0195-437c-9a76-194936c3ee21" name="Default Changelist" comment="Fix Bugs">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="c883b3d9-0195-437c-9a76-194936c3ee21" name="Default Changelist" comment="Add gitignore ignores">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/META-INF/TowerDefence.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/Sketch.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/Sketch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/gameUi/InGameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/gameUi/InGameMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/path/PathField.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/path/PathField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/Hitbox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/Hitbox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/Placeable.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/Placeable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/RectHitbox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/RectHitbox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/RoundHitbox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/RoundHitbox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/obstacle/Obstacle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/obstacle/Obstacle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/tower/ArcherTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/tower/ArcherTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/tower/BombTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/tower/BombTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/placeable/tower/Tower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/com/ehif/td/game/world/player/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/engine/Scheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/engine/Scheduler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/engine/Updateable.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/engine/Updateable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/engine/tasks/RepeatingTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/engine/tasks/RepeatingTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/ui/button/Button$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/ui/button/Button$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/ui/button/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/ui/button/Button.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/ui/button/ButtonEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/ui/button/ButtonEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/ui/button/ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/ui/button/ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/ui/images/ImageLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/ui/images/ImageLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/ui/mouse/MouseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/ui/mouse/MouseEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/ui/mouse/MouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/ui/mouse/MouseListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/TowerDefence/ui/mouse/MouseTracker.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/TowerDefence/ui/mouse/MouseTracker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ehif/td/Sketch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ehif/td/Sketch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +123,9 @@
       <workItem from="1575487103519" duration="4465000" />
       <workItem from="1575491863264" duration="3125000" />
       <workItem from="1576434162856" duration="118000" />
-      <workItem from="1576776331911" duration="84000" />
+      <workItem from="1576776331911" duration="309000" />
+      <workItem from="1576776643879" duration="641000" />
+      <workItem from="1576781519884" duration="79000" />
     </task>
     <task id="LOCAL-00001" summary="Add Abstract Class Placeable">
       <created>1575474849942</created>
@@ -161,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575494970240</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add gitignore ignores">
+      <created>1576776482984</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1576776482984</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,24 +226,61 @@
     <MESSAGE value="Add Listener" />
     <MESSAGE value="Add MouseTracker" />
     <MESSAGE value="Fix Bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Bugs" />
+    <MESSAGE value="Add gitignore ignores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add gitignore ignores" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="539" y="116" key="CommitChangelistDialog2" timestamp="1576776423214">
+    <state x="552" y="178" key="#Project_Structure" timestamp="1576776522094">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="539" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1576776423214" />
+    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1576776522094" />
+    <state x="539" y="116" key="CommitChangelistDialog2" timestamp="1576776512771">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="539" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1576776512771" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1576434279904">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1576434279904" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1576434165598">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1576781602022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576434165598" />
-    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576776333523">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576781602022" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1576781602022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1576776333523" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576781602022" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1576781602022">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576781602022" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1576781602022">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576781602022" />
+    <state x="184" y="85" key="MergeDialog" timestamp="1576776507853">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="85" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576776507853" />
+    <state x="672" y="235" key="MultipleFileMergeDialog" timestamp="1576781541957">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="672" y="235" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576781541957" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1576781598508">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1576781598508" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1576776667755">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1576776667755" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1576781520442">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576781520442" />
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576781527808">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1576781527808" />
   </component>
 </project>
